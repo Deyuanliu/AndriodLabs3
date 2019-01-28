@@ -13,11 +13,11 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/Textwidget"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -31,10 +31,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="fill"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/TextButton" />
 
         <ImageButton
             android:id="@+id/imageButton"
+            android:contentDescription="flag"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -69,11 +71,10 @@
 
         <EditText
             android:id="@+id/editText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/Type your answer here" />
+            android:inputType="textPersonName" />
     </LinearLayout>
 </LinearLayout>

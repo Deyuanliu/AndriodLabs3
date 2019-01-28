@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+<TextView
+             android:id="@+id/Text"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignParentTop="true"
+             android:text="@string/Textwidget"
+             android:textSize="30sp"/>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Text"
+        android:text="@string/ButtonText" />
+
+    <ImageButton
+        android:id="@+id/imgbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Text"
+         android:src="@drawable/flag"
+        />
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/imgbtn"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imgbtn"
+        android:text="@string/CheckButton" />
+    <Switch
+        android:id="@+id/switch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgbtn"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginRight="0dp"
+        android:layout_toEndOf="@+id/checkBox"
+        android:text="@string/SwitchButton" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+</RelativeLayout>

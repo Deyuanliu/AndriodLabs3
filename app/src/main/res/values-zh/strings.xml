@@ -3,4 +3,9 @@
     <string name="app_name">Lab1</string>
     <string name="hello_message">你好!</string>
     <string name="ButtonText">我是键盘</string>
+    <string name="Textwidget">这是我的小部件!</string>
+    <string name="TextButton">键盘</string>
+    <string name="CheckButton">检查！</string>
+    <string name="SwitchButton">开/关</string>
+    <string name="hintText">输入你的答案</string>
 </resources>

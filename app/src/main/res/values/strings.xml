@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">Lab1</string>
-    <string name="hello_message">Hello World!</string>
-    <string name="ButtonText">I\’m a button</string>
-    <string name="Textwidget">Here are my widges:!</string>
-    <string name="TextButton">BUTTON</string>
-    <string name="CheckButton">Check this out!</string>
-    <string name="SwitchButton">Switch on/off</string>
-    <string name="hintText">"Type your answer here"</string>
+    <string name="textView5" translatable="false">Your profile</string>
+    <string name="yourname" translatable="false">Your name</string>
+    <string name="editText7" translatable="false">textPersonName</string>
+    <string name="textView8" translatable="false">Your email</string>
+    <string name="editText9" translatable="false">textEmailAddress</string>
+    <string name="textView10" translatable="false">Your picture</string>
+    <string name="imgbtn" translatable="false">Switch on/off</string>
+    <string name="textView11" translatable="false">Click the button above to take a picture</string>
+    <string name="app_name" translatable="false">andriodlab3</string>
 
-    </resources>
+
+</resources>

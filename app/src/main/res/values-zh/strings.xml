@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lab1</string>
-    <string name="hello_message">你好!</string>
-    <string name="ButtonText">我是键盘</string>
-    <string name="Textwidget">这是我的小部件!</string>
-    <string name="TextButton">键盘</string>
-    <string name="CheckButton">检查！</string>
-    <string name="SwitchButton">开/关</string>
-    <string name="hintText">输入你的答案</string>
+
+    <string name="textView5" translatable="false">你的文档</string>
+    <string name="yourname" translatable="false">你的名字</string>
+    <string name="editText7" translatable="false">输入你的名字</string>
+    <string name="textView8" translatable="false">输入你的邮箱地址</string>
+    <string name="editText9" translatable="false">输入邮箱</string>
+    <string name="textView10" translatable="false">你的照片</string>
+    <string name="imgbtn" translatable="false">开/关</string>
+    <string name="textView11" translatable="false">请按上面按钮照相</string>
 </resources>

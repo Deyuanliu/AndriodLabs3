@@ -9,9 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-private static final String USER_PREFS_NAME="prefs key";
-private static final String USER_EMAIL="USER EMAIL KEY";
-    EditText m_EmailTextView;
+private static final String USER_PREFS_NAME="filename";
+private static final String USER_EMAIL="email";
+    private EditText emailTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +23,12 @@ private static final String USER_EMAIL="USER EMAIL KEY";
       //setContentView(R.layout.activity_main_linear);
      // setContentView(R.layout.activity_main_relative);
         SharedPreferences prefs = getSharedPreferences(USER_PREFS_NAME, MODE_PRIVATE);
-        String restoredText = prefs.getString(USER_EMAIL, null);
+        String restoredText = prefs.getString(USER_EMAIL, "");
 
-        EditText EmailTextView=findViewById(R.id.editText2);
+        emailTextView=findViewById(R.id.editText2);
         if (restoredText != null) {
-            if (m_EmailTextView != null) {
-                m_EmailTextView.setText(restoredText);
+            if (emailTextView != null) {
+                emailTextView.setText(restoredText);
             }
         }
 
@@ -38,8 +38,8 @@ private static final String USER_EMAIL="USER EMAIL KEY";
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, ProfileActivity.class);
-                if (m_EmailTextView != null) {
-                    String emailText = m_EmailTextView.getText().toString();
+                if (emailTextView != null) {
+                    String emailText = emailTextView.getText().toString();
                     intent.putExtra("email", emailText);
                 }
                 startActivity(intent);
@@ -52,8 +52,9 @@ private static final String USER_EMAIL="USER EMAIL KEY";
     protected void onPause() {
         super.onPause();
 
-        if (m_EmailTextView != null) {
-            String emailText = m_EmailTextView.getText().toString();
+        emailTextView = findViewById(R.id.editText2);
+        if (emailTextView != null) {
+            String emailText = emailTextView.getText().toString();
             SharedPreferences.Editor editor = getSharedPreferences(USER_PREFS_NAME, MODE_PRIVATE).edit();
             editor.putString(USER_EMAIL, emailText);
             editor.commit();

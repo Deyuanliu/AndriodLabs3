@@ -22,7 +22,7 @@ private static final String USER_EMAIL="email";
         //setContentView(R.layout.activity_main_grid);
       //setContentView(R.layout.activity_main_linear);
      // setContentView(R.layout.activity_main_relative);
-        SharedPreferences prefs = getSharedPreferences(USER_PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences( "student", MODE_PRIVATE);
         String restoredText = prefs.getString(USER_EMAIL, "");
 
         emailTextView=findViewById(R.id.editText2);

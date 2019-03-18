@@ -8,6 +8,8 @@
     <string name="imgbtn" translatable="false">Switch on/off</string>
     <string name="textView11" translatable="false">Click the button above to take a picture</string>
     <string name="app_name" translatable="false">andriodlab3</string>
-
+    <string name="buttonRecieve" translatable="false">buttonRecieve</string>
+    <string name="buttonSend" translatable="false">buttonSend</string>
+    <string name="buttonGotoChat" translatable="false">buttonGotoChat</string>
 
 </resources>

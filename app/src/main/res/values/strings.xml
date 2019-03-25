@@ -11,6 +11,5 @@
     <string name="buttonRecieve" translatable="false">buttonRecieve</string>
     <string name="buttonSend" translatable="false">buttonSend</string>
     <string name="buttonGotoChat" translatable="false">buttonGotoChat</string>
-    <string name="buttonGotoWeather" translatable="false">buttonGotoWeather</string>
 
 </resources>

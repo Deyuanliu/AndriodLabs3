@@ -39,6 +39,12 @@ public class ChatWindow extends AppCompatActivity {
     protected SQLiteDatabase db;
     Cursor results;
     ChatAdapter messageAdapter;
+    //lab8
+    public static final String ITEM_SELECTED = "ITEM";
+    public static final String ITEM_TYPE = "TYPE";
+    public static final String ITEM_POSITION = "POSITION";
+    public static final String ITEM_ID = "ID";
+    public static final int EMPTY_ACTIVITY = 345;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +77,9 @@ public class ChatWindow extends AppCompatActivity {
 
         messageAdapter = new ChatAdapter(this);
         listView.setAdapter(messageAdapter);
+
+        //lab8
+        boolean isTablet=findViewById(R.id.fragmentLocation) !=null;
 
         Button btSend = (Button) findViewById(R.id.buttonSend);
         btSend.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +127,7 @@ public class ChatWindow extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
                 Context context = view.getContext();
 
                 TextView textViewItem = ((TextView) view.findViewById(R.id.message_text));
@@ -129,11 +138,35 @@ public class ChatWindow extends AppCompatActivity {
                 // just toast it
                 Toast.makeText(context, "Item: " + listItemText, Toast.LENGTH_SHORT).show();
 
-                Log.i("chatListView", "onItemClick: " + i + " " + l);
+                Log.i("chatListView", "onItemClick: " + position + " " + l);
+                Bundle dataToPass = new Bundle();
+                dataToPass.putString(ITEM_SELECTED, chatMessage.get(position).getMessage());
+                dataToPass.putInt(ITEM_TYPE,chatMessage.get(position).getMessage_type());
+                dataToPass.putInt(ITEM_POSITION, position);
+                dataToPass.putLong(ITEM_ID, chatMessage.get(position).getId());
+
+                if(isTablet)
+                {
+                    DetailFragment dFragment = new DetailFragment(); //add a DetailFragment
+                    dFragment.setArguments( dataToPass ); //pass it a bundle for information
+                    dFragment.setTablet(true);  //tell the fragment if it's running on a tablet or not
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .add(R.id.fragmentLocation, dFragment) //Add the fragment in FrameLayout
+                            .addToBackStack("AnyName") //make the back button undo the transaction
+                            .commit(); //actually load the fragment.
+                }
+                else //isPhone
+                {
+                    Intent nextActivity = new Intent(ChatWindow.this, EmptyActivity.class);
+                    nextActivity.putExtras(dataToPass); //send data to next activity
+                    startActivityForResult(nextActivity, EMPTY_ACTIVITY); //make the transition
+                }
             }
         });
 
     }
+
 
     @Override
     protected void onDestroy() {

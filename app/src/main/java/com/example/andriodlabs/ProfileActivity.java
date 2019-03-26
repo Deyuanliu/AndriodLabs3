@@ -54,13 +54,6 @@ public class ProfileActivity<ACTIVITY_NAME> extends AppCompatActivity {
         Log.e(ACTIVITY_NAME,"In onCreate()");
 
 
-        Button weatherForecastBt = findViewById(R.id.buttonGotoWeather);
-        weatherForecastBt.setOnClickListener((View) -> {
-            Intent intentchat= new Intent(ProfileActivity.this, WeatherForecast.class);
-            startActivity(intentchat);
-        });
-        Log.e(ACTIVITY_NAME,"In onCreate()");
-
 
     }
     @Override

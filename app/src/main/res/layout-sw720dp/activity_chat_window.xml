@@ -34,12 +34,15 @@
          android:layout_height="wrap_content"
          android:id="@+id/buttonRecieve"
          android:layout_alignParentBottom="true"
-         android:layout_alignParentEnd="true" />
+         android:layout_alignRight="@id/listView"/>
+
+
     <FrameLayout
         android:id="@+id/fragmentLocation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorAccent"
+
         android:layout_toRightOf="@id/listView">
 
     </FrameLayout>

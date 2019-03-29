@@ -55,7 +55,7 @@ public class WeatherForecast extends AppCompatActivity {
         uvvalue = (TextView) findViewById(R.id.UV_rating);
         min = (TextView) findViewById(R.id.min_temperature);
         max = (TextView) findViewById(R.id.max_temperature);
-        ct = (TextView) findViewById(R.id.current_temperature);
+        //ct = (TextView) findViewById(R.id.current_temperature);
         imageview = (ImageView) findViewById(R.id.imageView);
 
 

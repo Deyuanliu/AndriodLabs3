@@ -46,6 +46,7 @@ public class ChatWindow extends AppCompatActivity {
     public static final String ITEM_ID = "ID";
     public static final int EMPTY_ACTIVITY = 345;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,7 +153,7 @@ public class ChatWindow extends AppCompatActivity {
                     dFragment.setTablet(true);  //tell the fragment if it's running on a tablet or not
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .add(R.id.fragmentLocation, dFragment) //Add the fragment in FrameLayout
+                            .replace(R.id.fragmentLocation, dFragment) //Add the fragment in FrameLayout
                             .addToBackStack("AnyName") //make the back button undo the transaction
                             .commit(); //actually load the fragment.
                 }
@@ -222,8 +223,10 @@ public class ChatWindow extends AppCompatActivity {
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if ((requestCode == 5) && (resultCode == Activity.RESULT_OK)) {
+        if ((requestCode == EMPTY_ACTIVITY) && (resultCode == Activity.RESULT_OK)) {
             Log.i(ACTIVITY_NAME, "Returned to ChatWindow.onActivityResult");
+            long id = data.getLongExtra(ChatWindow.ITEM_ID, 0);
+            deleteListMessage(id);
         }
     }
 
